@@ -2,6 +2,8 @@
 <html>
 <body>
 
+{% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+
 {% for x in fruits %}
   <h1>{{ x }}</h1>
 {% endfor %}
@@ -87,6 +89,8 @@
     <li>{{ forloop.counter0 }}</li>
   {% endfor %}
 </ul>
+
+{% include 'footer.html' %}
 
 </body>
 </html>
