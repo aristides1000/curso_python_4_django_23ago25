@@ -24,11 +24,19 @@ def main(request):
 
 def testing(request):
   mymembers = Member.objects.all().values()
+  mydata = Member.objects.all()
+  mydata2 = Member.objects.values_list('firstname', flat = True)
+  mydata3 = Member.objects.filter(firstname='Juana').values()
+  mydata4 = Member.objects.filter(lastname='Perez', id=4).values()
   template = loader.get_template('template.html')
   context = {
     'fruits': ['Apple', 'Banana', 'Cherry'],
     'firstname': 'Linus',
     'mymembers': mymembers,
+    'mymembers2': mydata,
+    'mymembers3': mydata2,
+    'mymembers4': mydata3,
+    'mymembers5': mydata4,
     'greeting': 0,
     'x': ['Apple', 'Banana', 'Cherry'],
     'y': ['Apple', 'Banana', 'Cherry'],
